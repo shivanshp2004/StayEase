@@ -38,7 +38,7 @@ function AuthLogin()
             <div className="text-center">
                 <h1 className="text-3xl font-bold tracking-tight text-foreground  ">Log In to your Account</h1>
                 <p className="mt-2 ">Don't have Account?
-                    <Link className="font-medium text-primary hover:underline" to='/auth/register'>Register</Link>
+                    <Link className="font-medium text-primary hover:underline" to='/auth/register'> Register</Link>
                 </p>
             </div>
             <CommonForm
