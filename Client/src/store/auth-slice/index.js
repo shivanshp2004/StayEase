@@ -8,12 +8,14 @@ const initialState = {
     isLoading: true,
 }
 
+import { host } from "../host";
+
 export const registerUser = createAsyncThunk(
     "/auth/register",
   
     async (formData) => {
       const response = await axios.post(
-        "https://stayease-backend-hy63.onrender.com/api/auth/register",
+        `${host}/api/auth/register`,
         formData,
         {
           withCredentials: true,
@@ -28,7 +30,7 @@ export const loginUser = createAsyncThunk(
   
     async (formData) => {
       const response = await axios.post(
-        "https://stayease-backend-hy63.onrender.com/api/auth/login",
+        `${host}/api/auth/login`,
         formData,
         {
           withCredentials: true,
@@ -43,7 +45,7 @@ export const loginUser = createAsyncThunk(
     "/auth/logout",
     async () => {
       const response = await axios.post(
-        "https://stayease-backend-hy63.onrender.com/api/auth/logout",
+        `${host}/api/auth/logout`,
         {},
         {
           withCredentials: true,
@@ -59,7 +61,7 @@ export const loginUser = createAsyncThunk(
   
     async () => {
       const response = await axios.get(
-        "https://stayease-backend-hy63.onrender.com/api/auth/check-auth",
+        `${host}/api/auth/check-auth`,
         {
           withCredentials: true,
           headers: {
