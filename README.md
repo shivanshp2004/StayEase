@@ -23,3 +23,9 @@
 - **Payment Integration**: Streamline the booking process with secure online payment options.
 - **Enhanced Filtering**: Add filters for location, price range, and amenities to simplify the search experience.
 - **User Reviews and Ratings**: Enable feedback for properties to help others make informed choices.
+
+- ## Live Demo
+
+Check out the live version of StayEase here: [StayEase on Render](https://stayease-234v.onrender.com/)
+
+
