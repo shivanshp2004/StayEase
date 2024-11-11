@@ -11,7 +11,7 @@ export const addNewProperty = createAsyncThunk(
   "property/addNewProperty",
   async (formData) => {
     const result = await axios.post(
-      "http://localhost:5000/api/admin/property/add",
+      "https://stayease-backend-hy63.onrender.com/api/admin/property/add",
       formData,
       {
         headers: {
@@ -26,7 +26,7 @@ export const fetchAllProperties = createAsyncThunk(
   "property/fetchAllProperties",
   async (formData) => {
     const result = await axios.get(
-      "http://localhost:5000/api/admin/property/get",
+      "https://stayease-backend-hy63.onrender.com/api/admin/property/get",
       formData
     );
     return result?.data;
@@ -36,7 +36,7 @@ export const editProperty = createAsyncThunk(
   "property/editProperty",
   async ({ id, formData }) => {
     const result = await axios.put(
-      `http://localhost:5000/api/admin/property/edit/${id}`,
+      `https://stayease-backend-hy63.onrender.com/api/admin/property/edit/${id}`,
       formData,
       {
         headers: {
@@ -51,7 +51,7 @@ export const deleteProperty = createAsyncThunk(
   "property/deleteProperty",
   async ( id) => {
     const result = await axios.delete(
-      `http://localhost:5000/api/admin/property/delete/${id}`
+      `https://stayease-backend-hy63.onrender.com/api/admin/property/delete/${id}`
     );
     return result?.data;
   }

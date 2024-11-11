@@ -13,7 +13,7 @@ export const fetchPropertyDetails = createAsyncThunk(
 
 
     const result = await axios.get(
-      `http://localhost:5000/api/shop/property/get/${id}`
+      `https://stayease-backend-hy63.onrender.com/api/shop/property/get/${id}`
     );
     return result?.data;
   }
@@ -28,7 +28,7 @@ export const fetchAllFilteredProperties = createAsyncThunk(
     })
     
     const result = await axios.get(
-      `http://localhost:5000/api/shop/property/get?${query}`
+      `https://stayease-backend-hy63.onrender.com/api/shop/property/get?${query}`
     );
     console.log(result);
     return result?.data;

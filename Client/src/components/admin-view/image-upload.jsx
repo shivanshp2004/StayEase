@@ -36,7 +36,7 @@ function PropertyImageUpload({imageFile, setImageFile, uploadedImageURL, setUplo
         setImageLoadingState(true);
         const data=new FormData();
         data.append('my_file', imageFile);
-        const response= await axios.post('http://localhost:5000/api/admin/property/upload-image', data); 
+        const response= await axios.post('https://stayease-backend-hy63.onrender.com/api/admin/property/upload-image', data); 
         if(response?.data?.success) {
             setUploadedImageURL(response.data.result.url);
             setImageLoadingState(false);
