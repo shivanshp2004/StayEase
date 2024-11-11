@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 function CommonForm({formControls, formData, setFormData, onSubmit, buttonText, isBtnDisabled}) {
 
     function renderInputByComponentType(getControlItem){
