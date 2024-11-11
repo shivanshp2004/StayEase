@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
 import authRouter from "./routes/auth/auth-routes.js";
 import adminPropertyRoutes from "./routes/admin/property-routes.js";
 import shopPropertyRoutes from "./routes/shop/property-routes.js";
@@ -21,7 +22,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173","https://stayease-234v.onrender.com","https://www.stayease-234v.onrender.com"],
+    origin: ["http://localhost:5173", "https://stayease-234v.onrender.com", "https://www.stayease-234v.onrender.com"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization", "Cache-Control", "Expires", "Pragma"],
     credentials: true,
@@ -31,7 +32,11 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 
-// Serve static files from the frontend directory
+// Fix __dirname using import.meta.url
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static files from the frontend build folder
 app.use(express.static(path.join(__dirname, "..", "Client", "dist")));
 
 // API routes
