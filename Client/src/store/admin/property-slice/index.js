@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { host } from "@/store/host";
 
 
 const initialState = {
@@ -11,7 +12,7 @@ export const addNewProperty = createAsyncThunk(
   "property/addNewProperty",
   async (formData) => {
     const result = await axios.post(
-      "https://stayease-backend-hy63.onrender.com/api/admin/property/add",
+      `${host}/api/admin/property/add`,
       formData,
       {
         headers: {
@@ -26,7 +27,7 @@ export const fetchAllProperties = createAsyncThunk(
   "property/fetchAllProperties",
   async (formData) => {
     const result = await axios.get(
-      "https://stayease-backend-hy63.onrender.com/api/admin/property/get",
+      `${host}/api/admin/property/get`,
       formData
     );
     return result?.data;
@@ -36,7 +37,7 @@ export const editProperty = createAsyncThunk(
   "property/editProperty",
   async ({ id, formData }) => {
     const result = await axios.put(
-      `https://stayease-backend-hy63.onrender.com/api/admin/property/edit/${id}`,
+      `${host}/api/admin/property/edit/${id}`,
       formData,
       {
         headers: {
@@ -51,7 +52,7 @@ export const deleteProperty = createAsyncThunk(
   "property/deleteProperty",
   async ( id) => {
     const result = await axios.delete(
-      `https://stayease-backend-hy63.onrender.com/api/admin/property/delete/${id}`
+      `${host}/api/admin/property/delete/${id}`
     );
     return result?.data;
   }

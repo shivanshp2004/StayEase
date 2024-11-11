@@ -1,3 +1,4 @@
+import { host } from "@/store/host";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -13,7 +14,7 @@ export const fetchPropertyDetails = createAsyncThunk(
 
 
     const result = await axios.get(
-      `https://stayease-backend-hy63.onrender.com/api/shop/property/get/${id}`
+      `${host}/api/shop/property/get/${id}`
     );
     return result?.data;
   }
@@ -28,7 +29,7 @@ export const fetchAllFilteredProperties = createAsyncThunk(
     })
     
     const result = await axios.get(
-      `https://stayease-backend-hy63.onrender.com/api/shop/property/get?${query}`
+      `${host}/api/shop/property/get?${query}`
     );
     console.log(result);
     return result?.data;

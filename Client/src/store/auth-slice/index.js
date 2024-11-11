@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { host } from "@/store/host";
 const initialState = {
     isAuthenticated: false,
     user: null,
@@ -13,7 +14,7 @@ export const registerUser = createAsyncThunk(
   
     async (formData) => {
       const response = await axios.post(
-        "https://stayease-backend-hy63.onrender.com/api/auth/register",
+        `${host}/api/auth/register`,
         formData,
         {
           withCredentials: true,
@@ -28,7 +29,7 @@ export const loginUser = createAsyncThunk(
   
     async (formData) => {
       const response = await axios.post(
-        "https://stayease-backend-hy63.onrender.com/api/auth/login",
+        `${host}/api/auth/login`,
         formData,
         {
           withCredentials: true,
@@ -43,7 +44,7 @@ export const loginUser = createAsyncThunk(
     "/auth/logout",
     async () => {
       const response = await axios.post(
-        "https://stayease-backend-hy63.onrender.com/api/auth/logout",
+        `${host}/api/auth/logout`,
         {},
         {
           withCredentials: true,
@@ -59,7 +60,7 @@ export const loginUser = createAsyncThunk(
   
     async () => {
       const response = await axios.get(
-        "https://stayease-backend-hy63.onrender.com/api/auth/check-auth",
+        `${host}/api/auth/check-auth`,
         {
           withCredentials: true,
           headers: {

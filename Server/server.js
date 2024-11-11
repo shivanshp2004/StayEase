@@ -39,6 +39,6 @@ app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/admin/property", adminPropertyRoutes);
 app.use("/api/shop/property", shopPropertyRoutes);
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
