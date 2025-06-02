@@ -16,7 +16,7 @@
 
 - **Frontend**: React, Tailwind CSS, Shadcn/ui
 - **Backend**: Node.js, Express
-- **Deployment**: Frontend as a static site and backend as a web service on Render.com
+- **Deployment**: Frontend as a static site and backend as a web service on Render.com (Active) .
 
 ## Future Enhancements
 
